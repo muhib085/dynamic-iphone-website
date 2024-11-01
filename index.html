@@ -23,13 +23,17 @@
           <div class="flex-none gap-2">
             <div class="form-control">
               <input
+                id="search-box"
                 type="text"
                 placeholder="Search"
                 class="input input-bordered w-24 md:w-auto"
               />
             </div>
             <div>
-              <button class="btn hover:bg-slate-600 hover:text-yellow-50">
+              <button
+                onclick="handleSearch()"
+                class="btn hover:bg-slate-600 hover:text-yellow-50"
+              >
                 Search
               </button>
             </div>
@@ -38,6 +42,47 @@
       </nav>
     </header>
     <!-- header section end -->
+
+    <!-- main part start -->
+
+    <!-- spinner -->
+    <div id="spinner-div" class="hidden min-h-screen text-center mt-5">
+      <span class="loading loading-bars loading-xs"></span>
+      <span class="loading loading-bars loading-sm"></span>
+      <span class="loading loading-bars loading-md"></span>
+      <span class="loading loading-bars loading-lg"></span>
+    </div>
+
+    <div id="phones-container"></div>
+
+    <!-- button showAll -->
+    <div class="text-center mt-5">
+      <button
+        onclick="handleShowAll()"
+        class="btn bg-red-300 hover:bg-slate-300"
+      >
+        Show All
+      </button>
+    </div>
+
+    <!-- show modal -->
+
+    <div id="modal-container">
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Hello!</h3>
+          <p class="py-4">Press ESC key or click the button below to close</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
+    <!-- main part end -->
     <!-- script link -->
     <script src="js/index.js"></script>
   </body>
